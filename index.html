@@ -2,12 +2,28 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>全民抢金币</title>
+    <title>XXXX</title>
     <script src="./js/zepto.min.js"></script>
 </head>
 <body>
-    <div>
+    <style>.delete { display: none; }</style>
 
-    </div>
+    <ul id=items>
+        <li>List item 1 <span class=delete>DELETE</span></li>
+        <li>List item 2 <span class=delete>DELETE</span></li>
+    </ul>
+
+    <script>
+        // show delete buttons on swipe
+        $('#items li').swipe(function(){
+            $('.delete').hide()
+            $('.delete', this).show()
+        })
+
+        // delete row on tapping delete button
+        $('.delete').tap(function(){
+            $(this).parent('li').remove()
+        })
+    </script>
 </body>
 </html>
